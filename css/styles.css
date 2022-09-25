@@ -53,7 +53,7 @@ p {
 
 /* logo */
 
-.header {
+.page-header {
   border-bottom: 1px solid #ECECEC;;
 }
 
@@ -212,6 +212,54 @@ ul {
   background-color: var(--button-active-bg-color)
 }
 
+/* Модальне вікно*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 8px;
+  min-height: 581px;
+  min-width: 528px;
+
+  background-color: var(--primary-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.button-close {
+  display: block;
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.logo-close {
+}
+
 /* section */
 
 .section {
@@ -300,10 +348,25 @@ ul {
 
 .work-list .pic {
   height: 294px;
+  position: relative;
 }
 
 .work-list .pic + .pic {
   margin-left: 30px;
+}
+
+.superimposed-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  padding: 27px 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-white-color);
 }
 
 /* Наша команда */
@@ -486,6 +549,7 @@ ul {
 .footer-social .link-social:focus {
   background-color: var(--accent-color);
 }
+
 /* Стилі для сторінки Портфоліо */
 
 .list-filter {
